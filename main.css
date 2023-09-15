@@ -1,0 +1,24 @@
+body {
+    background-color: black;
+    color: white;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  button {
+    font-size: 24px;
+    margin: 3px;
+  }
+  
+  .timer,
+  .buttons {
+    display: flex;
+    font-size: 42px;
+    padding: 15px;
+    width: 250px;
+    justify-content: center;
+    margin: auto;
+  }
