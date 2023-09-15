@@ -1,12 +1,3 @@
-const person = {
-    name: 'Agata',
-    age: 32
-};
-
-function personData({name, age}) {
-    const message = 'My name is ' + name + ' and a have ' + age + ' old year';
-    return message;
-}
 window.onload = function() {
     const start = document.querySelector("#start");
     const stop = document.querySelector("#stop");
@@ -21,22 +12,22 @@ const timer = {
     sec: 0,
     min: 0,
     hr: 0,
-    interval: 0,
+    interval: null,
     started: false,
     start: function() {
         if(!this.started) {
             this.started = true;
-            this.stoper();
+            this.count();
         }
     },
     stop: function() {
         clearInterval(this.interval);
         timer.started = false;
     },
-    stoper: function() {
+    count: function() {
         timer.display();
         timer.sec++;
-        this.interval = setInterval(this.stoper, 1000);
+        this.interval = setInterval(this.count, 1000);
     },
     clear: function() {
         this.stop();
@@ -55,7 +46,7 @@ const timer = {
             this.min = 0;
             this.hr++;
         }
-        timer.innerHTML = this.addZero(this.hr) + ":" + this.addZero(this.min) + ":" + this.addZero(this.sec) + ' / ' + personData(person);      
+        timer.innerHTML = this.addZero(this.hr) + ":" + this.addZero(this.min) + ":" + this.addZero(this.sec);      
     },
     addZero: function(n) {
         if (n < 10) {
